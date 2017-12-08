@@ -94,6 +94,13 @@ class GiftedChat extends React.Component {
     return currentMessages.concat(messages);
   }
 
+  static update(messages) {
+		if (!Array.isArray(messages)) {
+      messages = [messages];
+    }
+		return messages.slice(0);
+	}
+
   getChildContext() {
     return {
       actionSheet: () => this._actionSheetRef,
