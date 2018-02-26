@@ -5,6 +5,7 @@ import {
   Platform,
   StyleSheet,
   View,
+  Dimensions,
 } from 'react-native';
 
 import ActionSheet from '@expo/react-native-action-sheet';
@@ -37,6 +38,8 @@ const MIN_COMPOSER_HEIGHT = Platform.select({
   android: 41,
 });
 const MAX_COMPOSER_HEIGHT = 100;
+
+const { height } = Dimensions.get('window');
 
 class GiftedChat extends React.Component {
   constructor(props) {
@@ -494,7 +497,7 @@ class GiftedChat extends React.Component {
       );
     }
     return (
-      <View style={styles.container} onLayout={this.onInitialLayoutViewLayout}>
+      <View style={styles.loadingContainer} onLayout={this.onInitialLayoutViewLayout}>
         {this.renderLoading()}
       </View>
     );
@@ -506,6 +509,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
   },
+  loadingContainer: {
+    flex: 1,
+    backgroundColor: '#FFF',
+    height,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },   
 });
 
 GiftedChat.childContextTypes = {
