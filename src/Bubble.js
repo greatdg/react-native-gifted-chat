@@ -76,7 +76,7 @@ export default class Bubble extends React.Component {
   }
 
   renderTime() {
-    if (this.props.currentMessage.createdAt) {
+    if (this.props.currentMessage.created_at) {
       const {containerStyle, wrapperStyle, ...timeProps} = this.props;
       if (this.props.renderTime) {
         return this.props.renderTime(timeProps);

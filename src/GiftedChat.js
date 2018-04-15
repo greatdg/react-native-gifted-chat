@@ -515,7 +515,7 @@ const styles = StyleSheet.create({
     height,
     justifyContent: 'center',
     alignItems: 'center',
-  },   
+  },  
 });
 
 GiftedChat.childContextTypes = {

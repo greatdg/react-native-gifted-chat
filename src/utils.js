@@ -4,12 +4,12 @@ const DEPRECATION_MESSAGE = 'isSameUser and isSameDay should be imported from th
 
 export function isSameDay(currentMessage = {}, diffMessage = {}) {
 
-  if (!diffMessage.createdAt) {
+  if (!diffMessage.created_at) {
     return false
   }
 
-  let currentCreatedAt = moment(currentMessage.createdAt);
-  let diffCreatedAt = moment(diffMessage.createdAt);
+  let currentCreatedAt = moment(currentMessage.created_at);
+  let diffCreatedAt = moment(diffMessage.created_at);
 
   if (!currentCreatedAt.isValid() || !diffCreatedAt.isValid()) {
     return false;
